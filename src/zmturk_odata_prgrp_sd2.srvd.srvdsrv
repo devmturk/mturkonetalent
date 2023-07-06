@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service definition for online shop'
+define service Zmturk_odata_prgrp_sd2 {
+  expose zmturk_odata_prgrp2 as product_group2;
+}

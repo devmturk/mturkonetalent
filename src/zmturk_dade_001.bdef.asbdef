@@ -1,0 +1,22 @@
+managed implementation in class zbp_mturk_dade_003 unique;
+//strict ( 1 );
+
+define behavior for zmturk_dade_001 alias sales
+persistent table zmturk_t001
+with additional save
+lock master
+//authorization master ( instance )
+//etag master <field_name>
+{
+  field ( numbering : managed, readonly ) sales_uuid;
+  field ( mandatory ) salesorder;
+  field ( mandatory ) salesorderitem;
+  internal action create_pr;  // parameter $self;
+
+  create;
+  update;
+  delete;
+
+  action mustafa result [1] $self;
+
+}

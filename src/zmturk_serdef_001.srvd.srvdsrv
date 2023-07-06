@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service definition for projection view'
+define service ZMTURK_SERDEF_001 {
+  expose ZMTURK_DAPRO_001 as sales;
+}

@@ -1,0 +1,4 @@
+@EndUserText.label: 'Product Group Service Definitiom'
+define service Zmturk_odata_prgrp_sd {
+  expose zmturk_odata_prgrp_pw as product_group;
+}

@@ -1,0 +1,33 @@
+@Metadata.layer: #CUSTOMER
+@Search.searchable: true
+@UI: { headerInfo: { typeName: 'Sales List',
+ typeNamePlural: 'Sales List',
+title: { type: #STANDARD, label: 'Sales List', value:
+'salesorder' }},
+ presentationVariant: [{ sortOrder: [{ by: 'salesorderitem',
+ direction: #DESC }] }] }
+annotate view ZMTURK_DAPRO_001 with
+{
+  @UI.facet: [{ id: 'Orders',
+  purpose: #STANDARD,
+  type: #IDENTIFICATION_REFERENCE,
+  label: 'Salesorder',
+  position: 10 }]
+  sales_uuid;
+  @UI: { lineItem: [{ position: 10,label: 'salesorder', importance: #HIGH }],
+  identification: [{ position: 10, label: 'salesorder' }]
+  }
+  @Search.defaultSearchElement: true
+  salesorder;   
+  @UI: { lineItem: [{ position: 20,label: 'salesorderitem', importance: #HIGH }, { type: #FOR_ACTION, dataAction: 'mustafa', label: 'Mustafa' } ],
+  identification: [{ position: 20, label: 'salesorderitem' }]
+  }
+  
+  @Search.defaultSearchElement: true
+  salesorderitem;
+  @UI: { lineItem: [{ position: 30,label: 'salesdate', importance: #HIGH }],
+  identification: [{ position: 30, label: 'salesdate' }]
+  }
+  @Search.defaultSearchElement: true
+  salesdate;
+}
